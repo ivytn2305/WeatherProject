@@ -28,11 +28,11 @@ public class HomePage extends BasePage {
         //Enter keyword to search field and perform search
         waitForElementToBeClickable(searchInput);
         searchInput.sendKeys(searchKeyword);
-        try {
+/*        try {
             Thread.sleep(CommonConstants.TIMEOUT_20S);
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }
+        }*/
         searchInput.sendKeys(Keys.ENTER);
     }
 

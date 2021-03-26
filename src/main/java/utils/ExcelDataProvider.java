@@ -15,9 +15,9 @@ public class ExcelDataProvider {
 
         for (int i = 0; i < dataMappings.length; i++) {
             if (dataMappings[i][0].toString().equalsIgnoreCase(m.getName())) {
-                int indexOfDataFileColumn = dataMappings[i].length - 1;
+                 int indexOfDataFileColumn = dataMappings[i].length - 1;
                 excelPath = BasePage.getTestDataInitialPath() + dataMappings[i][indexOfDataFileColumn].toString();
-                System.out.println(excelPath);
+                //System.out.println(excelPath);
             }
         }
         Object data[][] = testData(excelPath, BasePage.sheetName);

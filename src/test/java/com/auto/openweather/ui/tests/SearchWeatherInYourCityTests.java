@@ -13,7 +13,7 @@ import utils.ExcelDataProvider;
 
 public class SearchWeatherInYourCityTests extends BaseTest {
 
-    @Test(dataProvider = "testData", dataProviderClass = ExcelDataProvider.class)
+    @Test(dataProvider = "testData", dataProviderClass = ExcelDataProvider.class, invocationCount = 5)
     @Description("TC01 - Search Weather Using Comnination of City Name and Country Code")
     @Feature("Search Weather In Your City")
     @Severity(SeverityLevel.CRITICAL)

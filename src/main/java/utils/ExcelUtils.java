@@ -21,13 +21,11 @@ public class ExcelUtils {
     public int getRowCount() {
         int rowCount = sheet.getPhysicalNumberOfRows();
         return rowCount;
-
     }
 
     public int getColCount() {
         int colCount = sheet.getRow(0).getPhysicalNumberOfCells();
         return colCount;
-
     }
 
 

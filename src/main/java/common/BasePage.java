@@ -21,10 +21,6 @@ public class BasePage {
         wait = new WebDriverWait(this.driver, CommonConstants.TIMEOUT_20S);
     }
 
-    public WebDriver getWebDriver() {
-       return driver;
-    }
-
     protected void waitForElementToBeClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -33,8 +29,9 @@ public class BasePage {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
-    public void waitForPageLoad() {
+    protected void waitForPageLoad() {
         ExpectedCondition<Boolean> expectation = driver -> ((JavascriptExecutor) Objects.requireNonNull(driver)).executeScript("return document.readyState").toString().equalsIgnoreCase("complete");
+        System.out.println(expectation);
         try {
             Thread.sleep(CommonConstants.TIMEOUT_3S);
             wait.until(expectation);
@@ -45,7 +42,7 @@ public class BasePage {
 
 
     protected String getPageTitle(){
-        return getWebDriver().getTitle();
+        return WebDriverFactory.getDriver().getTitle();
     }
 
     public static String getDataMappingFilePath(){
